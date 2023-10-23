@@ -1,5 +1,0 @@
-add_test( [==[Scenario: Loot spawn]==] /home/igr/_dev/dog-game/build/bin/game_server_tests [==[Scenario: Loot spawn]==]  )
-set_tests_properties( [==[Scenario: Loot spawn]==] PROPERTIES WORKING_DIRECTORY /home/igr/_dev/dog-game/build)
-add_test( [==[Scenario: Loot generation]==] /home/igr/_dev/dog-game/build/bin/game_server_tests [==[Scenario: Loot generation]==]  )
-set_tests_properties( [==[Scenario: Loot generation]==] PROPERTIES WORKING_DIRECTORY /home/igr/_dev/dog-game/build)
-set( game_server_tests_TESTS [==[Scenario: Loot spawn]==] [==[Scenario: Loot generation]==])
