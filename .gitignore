@@ -727,13 +727,6 @@ FodyWeavers.xsd
 *.xml
 
 # My VS Code files
+build/
 .build/
-*/**/build/
-tasks.json
-settings.json
-c_cpp_properties.json
-launch.json
-main
-bin/
-runserver.sh
-
+.vscode/
