@@ -728,5 +728,5 @@ FodyWeavers.xsd
 
 # My VS Code files
 build/
-.build/
+build*/
 .vscode/
