@@ -415,8 +415,6 @@ private:
     using LootObjectIdToCoords = std::unordered_map<LootObject::Id, geom::PointDouble, util::TaggedHasher<LootObject::Id>>;
     LootObjectIdToCoords loot_obj_id_to_coords_;
 
-    std::mutex retire_mutex_;
-
 };
 
 class Game {
