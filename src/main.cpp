@@ -80,7 +80,8 @@ void StartServer(const cmd_parser::Args& args) {
     game.SetRandomSpawn(args.randomize_spawn_points);
     app::AppConfig conf {
         .db_url = GetDbURLFromEnv(),
-        .num_threads = std::thread::hardware_concurrency()
+        // .num_threads = std::thread::hardware_concurrency()
+        .num_threads = 2 // in cloud we have only 2 threads
     };
     app::Application app(game, conf);
 
