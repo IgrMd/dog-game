@@ -22,7 +22,7 @@ SessionBase::SessionBase(tcp::socket&& socket)
 
 void SessionBase::Read() {
     request_ = {};
-    stream_.expires_after(30s);
+    stream_.expires_after(120s);
     http::async_read(stream_, buffer_, request_,
         beast::bind_front_handler(&SessionBase::OnRead, GetSharedThis())
     );

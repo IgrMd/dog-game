@@ -188,6 +188,9 @@ bool UseCaseDogRetire::operator()(model::Dog::Id dog_id, const model::Map::Id& m
     using namespace std::chrono;
     auto unit = GetUnitOfWorkFactory().CreateUnitOfWork();
     Player* player = GetPlayers().FindByDogIdAndMapId(dog_id, map_id);
+    if (!player) {
+        return true;
+    }
     model::Dog& dog = player->GetDog();
     unit->PlayerRepository().Save({RetiredPlayerId::New(), dog.GetName(), dog.GetScore(), dog.GetTimeInGame()});
     unit->Commit();
