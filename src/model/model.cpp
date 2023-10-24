@@ -341,8 +341,9 @@ void GameSession::OnTick(std::chrono::milliseconds tick) {
 }
 
 void GameSession::RetireDogs() {
-    std::lock_guard g(retire_mutex_);
+    static std::mutex retire_mutex_;
     for (Dog::Id dog_id : dogs_to_retire_) {
+        std::lock_guard g(retire_mutex_);
         do_on_retire_(dog_id, map_->GetId());
         auto nh = dog_id_to_dog_.extract(dog_id);
         dogs_.erase(nh.mapped());
